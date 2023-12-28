@@ -5,7 +5,7 @@ function sync() {
 
     case "$stat" in
         *"behind"*) echo "crypt is behind, pulling" && git pull ;;
-        *"ahead"*) echo "crypt is ahead, pushing" && git add . && git status && read && git commit && git push ;;
+        *"ahead"*) echo "crypt is ahead, pushing" && git add . && git status && echo -n "press enter " && read && git commit && git push ;;
         *"up to date"*) echo "crypt is up to date, nothing left to do" ;;
     esac
 }
