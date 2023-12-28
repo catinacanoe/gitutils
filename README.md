@@ -6,12 +6,14 @@ vim:ft=markdown
 # Installation
 
   Clone this repository: `git clone 'https://github.com/catinacanoe/gitutils.git'`.
+
   All of the functionality is stored inside `main.sh`, so all you need to do is set an alias (or anything equivalent) like this: `alias gitutils="/path/to/repo/gitutils/main.sh"` in your `.bashrc` or `.zshrc`.
 
 ## NixOS
 
    I personally use nixos, and there is a really nice way to install stuff like this. With `home.nix` use:
    `home.packages = [ (pkgs.writeShellScriptBin "gitutils" "/path/to/repo/gitutils/main.sh $@") ];`
+
    And with `configuration.nix`, use:
    `environment.systemPackages = [ (pkgs.writeShellScriptBin "gitutils" "/path/to/repo/gitutils/main.sh $@") ];`
 
